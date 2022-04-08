@@ -16,8 +16,6 @@ const Header = () => {
                 <Button color="primary">Contato</Button>
             </Link>
             <Cart />   
-
-            
         </Grid>
     )
 }

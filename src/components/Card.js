@@ -7,8 +7,8 @@ const useStyles = makeStyles((theme) => ({
     paper: {
       padding: theme.spacing(2),
       textAlign: 'center'
-    },
-  }));
+    }
+}));
 
 const Card = ({ product, children }) => {
     const cart = useSelector( state => state.cart.value )
@@ -20,21 +20,20 @@ const Card = ({ product, children }) => {
             <Paper className={classes.paper}>
                 <Grid container direction='column'>
                     <Grid item>
-                    <img width="140px" src={product.image} alt={product.name_product}/>
-                    <Typography variant='h6'>
-                        {children}
-                    </Typography>
-                    <Typography variant='subtitle1'>
-                        R$ {product.price.toFixed(2)}
-                    </Typography>
+                        <img width="140px" src={product.image} alt={product.name_product}/>
+                        <Typography variant='h6'>
+                            {children}
+                        </Typography>
+                        <Typography variant='subtitle1'>
+                            R$ {product.price.toFixed(2)}
+                        </Typography>
                     </Grid>
-                
-                <Button 
-                    variant="contained"
-                    onClick={()=>dispatch(cartActions.Add(cart, product))}
-                >
-                    Adicionar
-                </Button>
+                    <Button 
+                        variant="contained"
+                        onClick={()=>dispatch(cartActions.Add(cart, product))}
+                    >
+                        Adicionar
+                    </Button>
                 </Grid>
             </Paper>
         </Grid>
